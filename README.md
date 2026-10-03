@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+FocusFlow
 
-## Getting Started
+A minimal gamified productivity dashboard built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+FocusFlow turns daily productivity into a simple quest-based system with XP, levels, streaks, focus sessions, achievements, and analytics.
 
-```bash
+✨ Features
+🎯 Daily quest system
+⚡ XP and level progression
+🔥 Daily productivity streaks
+📅 7-day streak calendar
+⏱️ Pomodoro focus timer
+📊 7-day productivity analytics
+🏆 Achievement system
+🎉 XP, streak, and level-up animations
+🔄 Automatic daily quest reset
+💾 LocalStorage data persistence
+🔔 Daily reminder preferences
+👤 Custom player profile/name
+⚙️ Settings with density controls
+⌨️ Keyboard shortcuts
+📱 Responsive design
+🌙 Dark cinematic UI
+🛠️ Tech Stack
+Next.js 16
+React
+TypeScript
+Tailwind CSS
+Framer Motion
+Lucide React
+LocalStorage
+🎮 How It Works
+
+FocusFlow uses a simple gamification system:
+
+Complete daily quests.
+Earn XP for each completed quest.
+Gain levels as your XP increases.
+Maintain your daily streak by completing quests.
+Use the focus timer for dedicated work sessions.
+Unlock achievements as you make progress.
+Track your productivity through the weekly analytics section.
+⌨️ Keyboard Shortcuts
+Key	Action
+Space	Start / Pause timer
+R	Reset timer
+N	Add new quest
+Esc	Close modal
+🚀 Getting Started
+
+Clone the repository:
+
+git clone https://github.com/YOUR_USERNAME/focusflow.git
+
+Go into the project:
+
+cd focusflow
+
+Install dependencies:
+
+npm install
+
+Start the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
+📦 Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a production build:
 
-## Learn More
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+Run the production server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+npm start
+📁 Project Structure
+focusflow/
+├── public/
+├── src/
+│   └── app/
+│       ├── globals.css
+│       ├── layout.tsx
+│       └── page.tsx
+├── .gitignore
+├── package.json
+├── tsconfig.json
+└── README.md
+💡 Why I Built This
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+FocusFlow was built as a small portfolio project to explore how gamification, productivity tools, animations, and modern frontend development can be combined into one practical application.
 
-## Deploy on Vercel
+The main goal was to create something simple enough to use every day while still demonstrating real frontend development skills.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🔮 Future Improvements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Possible future additions:
+
+Cloud database synchronization
+User authentication
+Multi-device support
+More detailed productivity analytics
+Custom themes
+Quest categories
+Backend API
+Mobile application
+👨‍💻 Author
+
+Abhijeet
+
+Computer Science Engineering Student
+
+GitHub: https://github.com/Abhijeet-creat
+LinkedIn: https://www.linkedin.com/in/abhijeet-creat/
