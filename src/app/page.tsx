@@ -2261,11 +2261,11 @@ export default function FocusFlowApp() {
 
         {/* MAIN */}
 
-        <section className="grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
+        <section className="grid min-w-0 w-full max-w-full gap-5 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]">
           {/* QUESTS */}
 
           <section
-            className={`rounded-2xl border border-white/[0.07] bg-white/[0.025] ${densityClass}`}
+            className={`min-w-0 w-full max-w-full rounded-2xl border border-white/[0.07] bg-white/[0.025] ${densityClass}`}
           >
             <div className="mb-5 flex items-center justify-between">
               <div>
@@ -2300,7 +2300,7 @@ export default function FocusFlowApp() {
               </button>
             </div>
 
-            <div className="space-y-2">
+            <div className="min-w-0 w-full max-w-full space-y-2">
               {dailyQuests.length ===
               0 ? (
                 <div className="rounded-xl border border-dashed border-white/10 py-10 text-center">
@@ -2347,7 +2347,7 @@ export default function FocusFlowApp() {
                             index *
                             0.03,
                         }}
-                        className={`group flex min-w-0 w-full items-center gap-2 rounded-xl border p-3 ${
+                        className={`group flex min-w-0 w-full max-w-full items-center gap-2 rounded-xl border p-3 ${
                           quest.completed
                             ? "border-emerald-400/10 bg-emerald-400/[0.035]"
                             : "border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04]"
@@ -2376,7 +2376,7 @@ export default function FocusFlowApp() {
 
                         <div className="min-w-0 flex-1">
                           <p
-                            className={`truncate text-sm font-medium ${
+                            className={`whitespace-normal break-words [overflow-wrap:anywhere] text-sm font-medium ${
                               quest.completed
                                 ? "text-white/35 line-through"
                                 : "text-white/80"
@@ -2420,7 +2420,7 @@ export default function FocusFlowApp() {
           {/* TIMER */}
 
           <section
-            className={`rounded-2xl border border-white/[0.07] bg-white/[0.025] ${densityClass}`}
+            className={`min-w-0 w-full max-w-full rounded-2xl border border-white/[0.07] bg-white/[0.025] ${densityClass}`}
           >
             <div className="mb-5">
               <div className="flex items-center gap-2">
@@ -2540,7 +2540,7 @@ export default function FocusFlowApp() {
                 </div>
               </div>
 
-              <div className="mt-6 flex w-full items-center gap-2 sm:w-auto">
+              <div className="mt-6 flex w-full max-w-full items-center gap-2 sm:w-auto">
                 <button
                   onClick={() =>
                     setTimerRunning(
