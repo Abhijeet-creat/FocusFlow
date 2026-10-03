@@ -7,6 +7,7 @@ import {
   Bell,
   Check,
   ChevronRight,
+  CircleHelp,
   Clock3,
   Flame,
   Home,
@@ -19,6 +20,7 @@ import {
   Settings,
   Sparkles,
   Target,
+  TimerReset,
   Trash2,
   Trophy,
   User,
@@ -1159,11 +1161,10 @@ export default function FocusFlowApp() {
                     ...previousStats,
                     [key]: {
                       xp:
-                        (previousStats[
+                        previousStats[
                           key
                         ]?.xp ||
-                          0) +
-                        25,
+                        0,
 
                       quests:
                         previousStats[
@@ -1872,7 +1873,7 @@ export default function FocusFlowApp() {
       : "p-5 md:p-6";
 
   return (
-    <main className="min-h-screen w-full min-w-0 overflow-x-hidden bg-[#070707] text-white">
+    <main className="min-h-screen overflow-x-hidden bg-[#070707] text-white">
       {/* BACKGROUND */}
 
       <div className="pointer-events-none fixed inset-0 -z-10">
@@ -1981,7 +1982,7 @@ export default function FocusFlowApp() {
 
       <div
         id="dashboard"
-        className="mx-auto w-full min-w-0 max-w-7xl px-4 pb-32 pt-8 md:px-6 md:pb-20 md:pt-12"
+        className="mx-auto max-w-7xl px-4 pb-28 pt-8 md:px-6 md:pb-20 md:pt-12"
       >
         {/* HERO */}
 
@@ -2016,7 +2017,7 @@ export default function FocusFlowApp() {
         {/* PLAYER */}
 
         <section className="mb-5 overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-r from-violet-500/[0.08] via-white/[0.025] to-transparent">
-          <div className="flex min-w-0 flex-col gap-5 p-5 md:flex-row md:items-center md:justify-between md:p-6">
+          <div className="flex flex-col gap-5 p-5 md:flex-row md:items-center md:justify-between md:p-6">
             <div className="flex items-center gap-4">
               <motion.div
                 whileHover={{
@@ -2097,7 +2098,7 @@ export default function FocusFlowApp() {
               </div>
             </div>
 
-            <div className="grid w-full min-w-0 grid-cols-3 gap-2 md:min-w-[330px]">
+            <div className="grid grid-cols-3 gap-2 md:min-w-[330px]">
               <MiniMetric
                 label="XP"
                 value={String(
@@ -2260,7 +2261,7 @@ export default function FocusFlowApp() {
 
         {/* MAIN */}
 
-        <section className="grid min-w-0 gap-5 lg:grid-cols-[1.25fr_0.75fr]">
+        <section className="grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
           {/* QUESTS */}
 
           <section
@@ -2346,7 +2347,7 @@ export default function FocusFlowApp() {
                             index *
                             0.03,
                         }}
-                        className={`group flex min-w-0 w-full items-center gap-3 rounded-xl border p-3 ${
+                        className={`group flex min-w-0 w-full items-center gap-2 rounded-xl border p-3 ${
                           quest.completed
                             ? "border-emerald-400/10 bg-emerald-400/[0.035]"
                             : "border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04]"
@@ -2401,7 +2402,7 @@ export default function FocusFlowApp() {
                               quest.id
                             )
                           }
-                          className="flex h-7 w-7 items-center justify-center rounded-lg text-white/15 opacity-0 transition hover:bg-red-400/10 hover:text-red-300 group-hover:opacity-100"
+                          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-white/30 transition hover:bg-red-400/10 hover:text-red-300 sm:opacity-0 sm:group-hover:opacity-100"
                         >
                           <Trash2
                             size={
@@ -2441,7 +2442,7 @@ export default function FocusFlowApp() {
 
             {/* TIMER MODES */}
 
-            <div className="mb-6 grid grid-cols-3 gap-1 rounded-xl border border-white/[0.06] bg-white/[0.02] p-1">
+            <div className="mb-6 grid min-w-0 w-full grid-cols-3 gap-1 overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] p-1">
               <TimerModeButton
                 active={
                   timerMode ===
@@ -2483,7 +2484,7 @@ export default function FocusFlowApp() {
             </div>
 
             <div className="flex flex-col items-center">
-              <div className="relative flex h-52 w-52 items-center justify-center">
+              <div className="relative flex h-44 w-44 items-center justify-center sm:h-52 sm:w-52">
                 <svg
                   className="absolute inset-0 h-full w-full -rotate-90"
                   viewBox="0 0 200 200"
@@ -2539,7 +2540,7 @@ export default function FocusFlowApp() {
                 </div>
               </div>
 
-              <div className="mt-6 flex items-center gap-2">
+              <div className="mt-6 flex w-full items-center gap-2 sm:w-auto">
                 <button
                   onClick={() =>
                     setTimerRunning(
@@ -2547,7 +2548,7 @@ export default function FocusFlowApp() {
                         !value
                     )
                   }
-                  className="flex items-center gap-2 rounded-xl bg-white px-6 py-2.5 text-xs font-semibold text-black transition hover:bg-white/90"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white px-4 py-2.5 text-xs font-semibold text-black transition hover:bg-white/90 sm:flex-none sm:px-6"
                 >
                   {timerRunning ? (
                     <>
@@ -2577,7 +2578,7 @@ export default function FocusFlowApp() {
                       timerDuration
                     );
                   }}
-                  className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-xs text-white/50 transition hover:bg-white/[0.07] hover:text-white"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-xs text-white/50 transition hover:bg-white/[0.07] hover:text-white sm:flex-none"
                 >
                   <RotateCcw
                     size={13}
@@ -2901,7 +2902,7 @@ export default function FocusFlowApp() {
 
       {/* MOBILE NAV */}
 
-      <div className="fixed bottom-4 left-1/2 z-40 flex w-[calc(100vw-24px)] max-w-[360px] -translate-x-1/2 items-center gap-1 rounded-2xl border border-white/10 bg-[#101010]/90 p-1.5 shadow-2xl backdrop-blur-xl md:hidden">
+      <div className="fixed bottom-4 left-1/2 z-40 flex -translate-x-1/2 items-center gap-1 rounded-2xl border border-white/10 bg-[#101010]/90 p-1.5 shadow-2xl backdrop-blur-xl md:hidden">
         <MobileNavButton
           active={
             activeMobileNav ===
@@ -3013,7 +3014,7 @@ export default function FocusFlowApp() {
               )
             }
           >
-            <div className="w-full max-w-md max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-2xl border border-white/10 bg-[#111111] p-5 shadow-2xl sm:p-6">
+            <div className="w-full max-w-md rounded-2xl border border-white/10 bg-[#111111] p-6 shadow-2xl">
               <div className="mb-6 flex items-start justify-between">
                 <div>
                   <h3 className="text-lg font-semibold">
@@ -3120,7 +3121,7 @@ export default function FocusFlowApp() {
               )
             }
           >
-            <div className="w-full max-w-lg max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-2xl border border-white/10 bg-[#111111] shadow-2xl">
+            <div className="w-full max-w-lg rounded-2xl border border-white/10 bg-[#111111] shadow-2xl">
               <div className="flex items-center justify-between border-b border-white/[0.06] px-6 py-5">
                 <div>
                   <h3 className="text-lg font-semibold">
@@ -3364,7 +3365,7 @@ export default function FocusFlowApp() {
               )
             }
           >
-            <div className="w-full max-w-md max-h-[calc(100dvh-2rem)] overflow-y-auto rounded-2xl border border-white/10 bg-[#111111] p-5 shadow-2xl sm:p-6">
+            <div className="w-full max-w-md rounded-2xl border border-white/10 bg-[#111111] p-6 shadow-2xl">
               <div className="mb-6 flex items-center justify-between">
                 <div>
                   <h3 className="text-lg font-semibold">
@@ -3652,7 +3653,7 @@ function MobileNavButton({
   return (
     <button
       onClick={onClick}
-      className={`flex min-w-0 flex-1 flex-col items-center gap-1 rounded-xl px-2 py-2 text-[9px] transition ${
+      className={`flex min-w-[68px] flex-col items-center gap-1 rounded-xl px-2 py-2 text-[9px] transition ${
         active
           ? "bg-white/10 text-white"
           : "text-white/35"
@@ -3861,7 +3862,7 @@ function ModalOverlay({
         transition={{
           duration: 0.2,
         }}
-        className="my-auto flex w-full min-w-0 items-center justify-center"
+        className="my-auto flex w-full items-center justify-center"
       >
         {children}
       </motion.div>
